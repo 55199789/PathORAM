@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Linux - 5.15.0-117-generic - x86_64
   -
@@ -14,10 +14,10 @@ events:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiler: /usr/bin/gcc 
       Build flags: 
       Id flags:  
       
@@ -36,10 +36,10 @@ events:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /usr/bin/g++ 
       Build flags: 
       Id flags:  
       
@@ -57,27 +57,29 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1a2c6/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_1a2c6.dir/build.make CMakeFiles/cmTC_1a2c6.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8'
-        Building C object CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b048/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2b048.dir/build.make CMakeFiles/cmTC_2b048.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd'
+        Building C object CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o
+        /usr/bin/gcc   -v -o CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/bin/gcc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
@@ -85,8 +87,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-         /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cclA4zGR.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccGMVZR7.s
         GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)
         	compiled by GNU C version 10.5.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
         
@@ -106,17 +108,17 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: 6dcfe8ebe7b280eb1645446fd19b9039
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-         as -v --64 -o CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o /tmp/cclA4zGR.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o /tmp/ccGMVZR7.s
         GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-        Linking C executable cmTC_1a2c6
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a2c6.dir/link.txt --verbose=1
-        /usr/bin/cc  -v -Wl,-v -rdynamic CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -o cmTC_1a2c6
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        Linking C executable cmTC_2b048
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b048.dir/link.txt --verbose=1
+        /usr/bin/gcc  -v -Wl,-v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -o cmTC_2b048
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/bin/gcc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -127,13 +129,13 @@ events:
         gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a2c6' '-mtune=generic' '-march=x86-64'
-         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaVBRbj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a2c6 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b048' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMf3cz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b048 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
         collect2 version 10.5.0
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaVBRbj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a2c6 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMf3cz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b048 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.34
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a2c6' '-mtune=generic' '-march=x86-64'
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b048' '-mtune=generic' '-march=x86-64'
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd'
         
       exitCode: 0
   -
@@ -141,7 +143,7 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:134 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -163,20 +165,20 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8']
+        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1a2c6/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_1a2c6.dir/build.make CMakeFiles/cmTC_1a2c6.dir/build]
-        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-bDQXb8']
-        ignore line: [Building C object CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b048/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_2b048.dir/build.make CMakeFiles/cmTC_2b048.dir/build]
+        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-eQfzKd']
+        ignore line: [Building C object CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/gcc   -v -o CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
@@ -184,8 +186,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cclA4zGR.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccGMVZR7.s]
         ignore line: [GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 10.5.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
         ignore line: []
@@ -205,17 +207,17 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: 6dcfe8ebe7b280eb1645446fd19b9039]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o /tmp/cclA4zGR.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o /tmp/ccGMVZR7.s]
         ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-        ignore line: [Linking C executable cmTC_1a2c6]
-        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a2c6.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v -Wl -v -rdynamic CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -o cmTC_1a2c6]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking C executable cmTC_2b048]
+        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b048.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/gcc  -v -Wl -v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -o cmTC_2b048]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -226,13 +228,13 @@ events:
         ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a2c6' '-mtune=generic' '-march=x86-64']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaVBRbj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a2c6 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b048' '-mtune=generic' '-march=x86-64']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMf3cz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b048 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccaVBRbj.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccAMf3cz.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -244,14 +246,13 @@ events:
           arg [elf_x86_64] ==> ignore
           arg [--hash-style=gnu] ==> ignore
           arg [--as-needed] ==> ignore
-          arg [-export-dynamic] ==> ignore
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_1a2c6] ==> ignore
+          arg [cmTC_2b048] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o]
@@ -264,7 +265,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -279,7 +280,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 10.5.0]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaVBRbj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a2c6 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_1a2c6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAMf3cz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b048 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_2b048.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -304,7 +305,7 @@ events:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Running the C compiler's linker: "/usr/bin/ld" "-v"
       GNU ld (GNU Binutils for Ubuntu) 2.34
@@ -313,27 +314,29 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fe645/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_fe645.dir/build.make CMakeFiles/cmTC_fe645.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8'
-        Building CXX object CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_85207/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_85207.dir/build.make CMakeFiles/cmTC_85207.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b'
+        Building CXX object CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/g++   -v -o CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/g++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
@@ -341,8 +344,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-         /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpX0sm2.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccsULF70.s
         GNU C++14 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)
         	compiled by GNU C version 10.5.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
         
@@ -366,17 +369,17 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: 99fb41dde442999632e2a9da834ed487
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-         as -v --64 -o CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpX0sm2.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccsULF70.s
         GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-        Linking CXX executable cmTC_fe645
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe645.dir/link.txt --verbose=1
-        /usr/bin/c++  -v -Wl,-v -rdynamic CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fe645
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_85207
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85207.dir/link.txt --verbose=1
+        /usr/bin/g++  -v -Wl,-v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_85207
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/g++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -387,13 +390,13 @@ events:
         gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fe645' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF1srvv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fe645 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85207' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccM4pYfq.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_85207 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
         collect2 version 10.5.0
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF1srvv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fe645 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccM4pYfq.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_85207 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.34
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fe645' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85207' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b'
         
       exitCode: 0
   -
@@ -401,7 +404,7 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:134 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -429,20 +432,20 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8']
+        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fe645/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_fe645.dir/build.make CMakeFiles/cmTC_fe645.dir/build]
-        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-6CUrR8']
-        ignore line: [Building CXX object CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_85207/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_85207.dir/build.make CMakeFiles/cmTC_85207.dir/build]
+        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-tWDT3b']
+        ignore line: [Building CXX object CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/g++   -v -o CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -c /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
@@ -450,8 +453,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpX0sm2.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccsULF70.s]
         ignore line: [GNU C++14 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 10.5.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
         ignore line: []
@@ -475,17 +478,17 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: 99fb41dde442999632e2a9da834ed487]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpX0sm2.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccsULF70.s]
         ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-        ignore line: [Linking CXX executable cmTC_fe645]
-        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe645.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v -Wl -v -rdynamic CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fe645]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_85207]
+        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85207.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/g++  -v -Wl -v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_85207]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -496,13 +499,13 @@ events:
         ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fe645' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF1srvv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fe645 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85207' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccM4pYfq.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_85207 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccF1srvv.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccM4pYfq.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -514,14 +517,13 @@ events:
           arg [elf_x86_64] ==> ignore
           arg [--hash-style=gnu] ==> ignore
           arg [--as-needed] ==> ignore
-          arg [-export-dynamic] ==> ignore
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_fe645] ==> ignore
+          arg [cmTC_85207] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o]
@@ -534,7 +536,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -545,7 +547,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 10.5.0]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF1srvv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fe645 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_fe645.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccM4pYfq.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_85207 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -v CMakeFiles/cmTC_85207.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -570,41 +572,37 @@ events:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
       GNU ld (GNU Binutils for Ubuntu) 2.34
-...
-
----
-events:
   -
     kind: "try_compile-v1"
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:219 (try_compile)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:487 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:42 (find_package)"
-    description: "Detecting CXX OpenMP compiler info"
+      - "CMakeLists.txt:44 (find_package)"
+    description: "Detecting C OpenMP compiler info"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: " -g -O1 -coverage -fprofile-arcs -ftest-coverage"
-      CMAKE_CXX_FLAGS_DEBUG: "-g -O1 -coverage -fprofile-arcs -ftest-coverage"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
     buildResult:
-      variable: "OpenMP_COMPILE_RESULT_CXX_fopenmp"
+      variable: "OpenMP_COMPILE_RESULT_C_fopenmp"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13824/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_13824.dir/build.make CMakeFiles/cmTC_13824.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom'
-        Building CXX object CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o
-        /usr/bin/c++   -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp -v -std=gnu++2a -o CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom/OpenMPTryFlag.cpp
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b775/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2b775.dir/build.make CMakeFiles/cmTC_2b775.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f'
+        Building C object CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o
+        /usr/bin/gcc   -fopenmp -v -o CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f/OpenMPTryFlag.c
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/gcc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
@@ -612,8 +610,223 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
-        COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-         /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -g -O1 -std=gnu++2a -version -fprofile-arcs -ftest-coverage -fopenmp -fprofile-arcs -ftest-coverage -fprofile-update=prefer-atomic -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc8eF3xf.s
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+         /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D_REENTRANT /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -version -fopenmp -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc3VeNTd.s
+        GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 10.5.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/10/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 10.5.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 6dcfe8ebe7b280eb1645446fd19b9039
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+         as -v --64 -o CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o /tmp/cc3VeNTd.s
+        GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+        Linking C executable cmTC_2b775
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b775.dir/link.txt --verbose=1
+        /usr/bin/gcc  -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -o cmTC_2b775  -v
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/gcc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.5.0-1ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+        Reading specs from /usr/lib/gcc/x86_64-linux-gnu/10/libgomp.spec
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-coverage' '-o' 'cmTC_2b775' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
+         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGdWFhG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b775 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -lgomp -lgcov -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-coverage' '-o' 'cmTC_2b775' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:263 (message)"
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:487 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:44 (find_package)"
+    message: |
+      Parsed C OpenMP implicit link information from above output:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b775/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_2b775.dir/build.make CMakeFiles/cmTC_2b775.dir/build]
+        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f']
+        ignore line: [Building C object CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o]
+        ignore line: [/usr/bin/gcc   -fopenmp -v -o CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f/OpenMPTryFlag.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.5.0-1ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D_REENTRANT /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-GNdt3f/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -version -fopenmp -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc3VeNTd.s]
+        ignore line: [GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.5.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.5.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 6dcfe8ebe7b280eb1645446fd19b9039]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o /tmp/cc3VeNTd.s]
+        ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+        ignore line: [Linking C executable cmTC_2b775]
+        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b775.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/gcc  -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -o cmTC_2b775  -v]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.5.0-1ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+        ignore line: [Reading specs from /usr/lib/gcc/x86_64-linux-gnu/10/libgomp.spec]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-coverage' '-o' 'cmTC_2b775' '-v' '-mtune=generic' '-march=x86-64' '-pthread']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGdWFhG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2b775 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o -lgomp -lgcov -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccGdWFhG.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_2b775] ==> ignore
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
+          arg [-lgcov] ==> lib [gcov]
+          arg [CMakeFiles/cmTC_2b775.dir/OpenMPTryFlag.c.o] ==> ignore
+          arg [-lgomp] ==> lib [gomp]
+          arg [-lgcov] ==> lib [gcov]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
+        implicit libs: [gcov;gomp;gcov;gcc;gcc_s;pthread;c;gcc;gcc_s]
+        implicit objs: []
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:219 (try_compile)"
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:487 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:44 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp"
+      CMAKE_CXX_FLAGS_DEBUG: "-g -O1 -coverage -fprofile-arcs -ftest-coverage"
+      CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd'
+        
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cbfd6/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_cbfd6.dir/build.make CMakeFiles/cmTC_cbfd6.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd'
+        Building CXX object CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/g++   -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp -v -std=c++2a -o CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd/OpenMPTryFlag.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/g++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.5.0-1ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-g5VkgL/gcc-10-10.5.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) 
+        COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread'
+         /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT -D PARALLEL /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd/OpenMPTryFlag.cpp -march=icelake-server -mmmx -mno-3dnow -msse -msse2 -msse3 -mssse3 -mno-sse4a -mcx16 -msahf -mmovbe -maes -msha -mpclmul -mpopcnt -mabm -mno-lwp -mfma -mno-fma4 -mno-xop -mbmi -msgx -mbmi2 -mpconfig -mwbnoinvd -mno-tbm -mavx -mavx2 -msse4.2 -msse4.1 -mlzcnt -mno-rtm -mno-hle -mrdrnd -mf16c -mfsgsbase -mrdseed -mprfchw -madx -mfxsr -mxsave -mxsaveopt -mavx512f -mno-avx512er -mavx512cd -mno-avx512pf -mno-prefetchwt1 -mclflushopt -mxsavec -mxsaves -mavx512dq -mavx512bw -mavx512vl -mavx512ifma -mavx512vbmi -mno-avx5124fmaps -mno-avx5124vnniw -mclwb -mno-mwaitx -mno-clzero -mpku -mrdpid -mgfni -mno-shstk -mavx512vbmi2 -mavx512vnni -mvaes -mvpclmulqdq -mavx512bitalg -mavx512vpopcntdq -mno-movdiri -mno-movdir64b -mno-waitpkg -mno-cldemote -mno-ptwrite -mno-avx512bf16 -mno-enqcmd -mno-avx512vp2intersect --param l1-cache-size=48 --param l1-cache-line-size=64 --param l2-cache-size=49152 -mtune=icelake-server -quiet -dumpbase OpenMPTryFlag.cpp -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -auxbase-strip CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -O3 -std=c++2a -version -fopenmp -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccAKb2Vl.s
         GNU C++17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)
         	compiled by GNU C version 10.5.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
         
@@ -637,17 +850,17 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: 99fb41dde442999632e2a9da834ed487
-        COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-         as -v --64 -o CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o /tmp/cc8eF3xf.s
+        COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread'
+         as -v --64 -o CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o /tmp/ccAKb2Vl.s
         GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-        Linking CXX executable cmTC_13824
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13824.dir/link.txt --verbose=1
-        /usr/bin/c++  -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -o cmTC_13824  -v
+        COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread'
+        Linking CXX executable cmTC_cbfd6
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbfd6.dir/link.txt --verbose=1
+        /usr/bin/g++  -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -o cmTC_cbfd6  -v
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/g++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -659,10 +872,10 @@ events:
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
         Reading specs from /usr/lib/gcc/x86_64-linux-gnu/10/libgomp.spec
-        COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_13824' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9B0AC0.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_13824 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcov -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o
-        COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_13824' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom'
+        COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_cbfd6' '-v' '-shared-libgcc' '-pthread'
+         /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUKZ8lW.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cbfd6 -s /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcov -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o
+        COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_cbfd6' '-v' '-shared-libgcc' '-pthread'
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd'
         
       exitCode: 0
   -
@@ -670,19 +883,19 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:263 (message)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:487 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:42 (find_package)"
+      - "CMakeLists.txt:44 (find_package)"
     message: |
       Parsed CXX OpenMP implicit link information from above output:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom']
+        ignore line: [Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13824/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_13824.dir/build.make CMakeFiles/cmTC_13824.dir/build]
-        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom']
-        ignore line: [Building CXX object CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o]
-        ignore line: [/usr/bin/c++   -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp -v -std=gnu++2a -o CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom/OpenMPTryFlag.cpp]
+        ignore line: [Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cbfd6/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_cbfd6.dir/build.make CMakeFiles/cmTC_cbfd6.dir/build]
+        ignore line: [make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd']
+        ignore line: [Building CXX object CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o]
+        ignore line: [/usr/bin/g++   -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp -v -std=c++2a -o CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd/OpenMPTryFlag.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
@@ -690,8 +903,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 10.5.0 (Ubuntu 10.5.0-1ubuntu1~20.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-NYbYom/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -g -O1 -std=gnu++2a -version -fprofile-arcs -ftest-coverage -fopenmp -fprofile-arcs -ftest-coverage -fprofile-update=prefer-atomic -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc8eF3xf.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT -D PARALLEL /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zAzSsd/OpenMPTryFlag.cpp -march=icelake-server -mmmx -mno-3dnow -msse -msse2 -msse3 -mssse3 -mno-sse4a -mcx16 -msahf -mmovbe -maes -msha -mpclmul -mpopcnt -mabm -mno-lwp -mfma -mno-fma4 -mno-xop -mbmi -msgx -mbmi2 -mpconfig -mwbnoinvd -mno-tbm -mavx -mavx2 -msse4.2 -msse4.1 -mlzcnt -mno-rtm -mno-hle -mrdrnd -mf16c -mfsgsbase -mrdseed -mprfchw -madx -mfxsr -mxsave -mxsaveopt -mavx512f -mno-avx512er -mavx512cd -mno-avx512pf -mno-prefetchwt1 -mclflushopt -mxsavec -mxsaves -mavx512dq -mavx512bw -mavx512vl -mavx512ifma -mavx512vbmi -mno-avx5124fmaps -mno-avx5124vnniw -mclwb -mno-mwaitx -mno-clzero -mpku -mrdpid -mgfni -mno-shstk -mavx512vbmi2 -mavx512vnni -mvaes -mvpclmulqdq -mavx512bitalg -mavx512vpopcntdq -mno-movdiri -mno-movdir64b -mno-waitpkg -mno-cldemote -mno-ptwrite -mno-avx512bf16 -mno-enqcmd -mno-avx512vp2intersect --param l1-cache-size=48 --param l1-cache-line-size=64 --param l2-cache-size=49152 -mtune=icelake-server -quiet -dumpbase OpenMPTryFlag.cpp -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -auxbase-strip CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -O3 -std=c++2a -version -fopenmp -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccAKb2Vl.s]
         ignore line: [GNU C++17 (Ubuntu 10.5.0-1ubuntu1~20.04) version 10.5.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 10.5.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
         ignore line: []
@@ -715,17 +928,17 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: 99fb41dde442999632e2a9da834ed487]
-        ignore line: [COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o /tmp/cc8eF3xf.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o /tmp/ccAKb2Vl.s]
         ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-std=gnu++2a' '-o' 'CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-        ignore line: [Linking CXX executable cmTC_13824]
-        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13824.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -o cmTC_13824  -v]
+        ignore line: [COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-std=c++2a' '-o' 'CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-pthread']
+        ignore line: [Linking CXX executable cmTC_cbfd6]
+        ignore line: [/home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbfd6.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/g++  -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp -v  -coverage -lgcov  CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -o cmTC_cbfd6  -v]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -737,13 +950,13 @@ events:
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
         ignore line: [Reading specs from /usr/lib/gcc/x86_64-linux-gnu/10/libgomp.spec]
-        ignore line: [COLLECT_GCC_OPTIONS='-g' '-O1' '-coverage' '-fprofile-arcs' '-ftest-coverage' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_13824' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9B0AC0.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_13824 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcov -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-O3' '-mavx' '-mavx512f' '-mavx512cd' '-mavx512vl' '-mavx512bw' '-mavx512dq' '-mbmi2' '-march=native' '-D' 'PARALLEL' '-s' '-fopenmp' '-v' '-coverage' '-o' 'cmTC_cbfd6' '-v' '-shared-libgcc' '-pthread']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUKZ8lW.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cbfd6 -s /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. -lgcov CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcov -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/10/crtoffloadend.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc9B0AC0.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccUKZ8lW.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
@@ -762,7 +975,8 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_13824] ==> ignore
+          arg [cmTC_cbfd6] ==> ignore
+          arg [-s] ==> ignore
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
@@ -772,7 +986,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
           arg [-lgcov] ==> lib [gcov]
-          arg [CMakeFiles/cmTC_13824.dir/OpenMPTryFlag.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_cbfd6.dir/OpenMPTryFlag.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgomp] ==> lib [gomp]
@@ -802,72 +1016,103 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:421 (try_compile)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:561 (_OPENMP_GET_SPEC_DATE)"
-      - "CMakeLists.txt:42 (find_package)"
+      - "CMakeLists.txt:44 (find_package)"
+    description: "Detecting C OpenMP version"
+    directories:
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
+    buildResult:
+      variable: "OpenMP_SPECTEST_C_"
+      cached: true
+      stdout: |
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e'
+        
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8749e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8749e.dir/build.make CMakeFiles/cmTC_8749e.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e'
+        Building C object CMakeFiles/cmTC_8749e.dir/OpenMPCheckVersion.c.o
+        /usr/bin/gcc   -fopenmp -o CMakeFiles/cmTC_8749e.dir/OpenMPCheckVersion.c.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e/OpenMPCheckVersion.c
+        Linking C executable cmTC_8749e
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8749e.dir/link.txt --verbose=1
+        /usr/bin/gcc  -fopenmp  -coverage -lgcov  CMakeFiles/cmTC_8749e.dir/OpenMPCheckVersion.c.o -o cmTC_8749e
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-HJsF4e'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:421 (try_compile)"
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindOpenMP.cmake:561 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:44 (find_package)"
     description: "Detecting CXX OpenMP version"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: " -g -O1 -coverage -fprofile-arcs -ftest-coverage"
+      CMAKE_CXX_FLAGS: " -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -O1 -coverage -fprofile-arcs -ftest-coverage"
       CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
     buildResult:
       variable: "OpenMP_SPECTEST_CXX_"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ee8ee/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_ee8ee.dir/build.make CMakeFiles/cmTC_ee8ee.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk'
-        Building CXX object CMakeFiles/cmTC_ee8ee.dir/OpenMPCheckVersion.cpp.o
-        /usr/bin/c++   -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp -std=gnu++2a -o CMakeFiles/cmTC_ee8ee.dir/OpenMPCheckVersion.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk/OpenMPCheckVersion.cpp
-        Linking CXX executable cmTC_ee8ee
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee8ee.dir/link.txt --verbose=1
-        /usr/bin/c++  -g -O1 -coverage -fprofile-arcs -ftest-coverage -fopenmp  -coverage -lgcov  CMakeFiles/cmTC_ee8ee.dir/OpenMPCheckVersion.cpp.o -o cmTC_ee8ee
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-zETJPk'
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a1e49/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_a1e49.dir/build.make CMakeFiles/cmTC_a1e49.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog'
+        Building CXX object CMakeFiles/cmTC_a1e49.dir/OpenMPCheckVersion.cpp.o
+        /usr/bin/g++   -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp -std=c++2a -o CMakeFiles/cmTC_a1e49.dir/OpenMPCheckVersion.cpp.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog/OpenMPCheckVersion.cpp
+        Linking CXX executable cmTC_a1e49
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1e49.dir/link.txt --verbose=1
+        /usr/bin/g++  -O3 -mavx -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mbmi2 -march=native -DPARALLEL -s -fopenmp -fopenmp  -coverage -lgcov  CMakeFiles/cmTC_a1e49.dir/OpenMPCheckVersion.cpp.o -o cmTC_a1e49
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-2vuHog'
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "CMakeLists.txt:45 (find_package)"
+      - "CMakeLists.txt:47 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: " -g -O1 -coverage -fprofile-arcs -ftest-coverage"
-      CMAKE_CXX_FLAGS_DEBUG: "-g -O1 -coverage -fprofile-arcs -ftest-coverage"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_02c3e/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_02c3e.dir/build.make CMakeFiles/cmTC_02c3e.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl'
-        Building CXX object CMakeFiles/cmTC_02c3e.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -g -O1 -coverage -fprofile-arcs -ftest-coverage  -std=gnu++2a -o CMakeFiles/cmTC_02c3e.dir/src.cxx.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl/src.cxx
-        Linking CXX executable cmTC_02c3e
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02c3e.dir/link.txt --verbose=1
-        /usr/bin/c++  -g -O1 -coverage -fprofile-arcs -ftest-coverage   -coverage -lgcov  CMakeFiles/cmTC_02c3e.dir/src.cxx.o -o cmTC_02c3e
-        /usr/bin/ld: CMakeFiles/cmTC_02c3e.dir/src.cxx.o: in function `main':
-        /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl/src.cxx:11: undefined reference to `pthread_create'
-        /usr/bin/ld: /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl/src.cxx:12: undefined reference to `pthread_detach'
-        /usr/bin/ld: /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl/src.cxx:13: undefined reference to `pthread_cancel'
-        /usr/bin/ld: /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl/src.cxx:14: undefined reference to `pthread_join'
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_88fb3/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_88fb3.dir/build.make CMakeFiles/cmTC_88fb3.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f'
+        Building C object CMakeFiles/cmTC_88fb3.dir/src.c.o
+        /usr/bin/gcc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_88fb3.dir/src.c.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f/src.c
+        Linking C executable cmTC_88fb3
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88fb3.dir/link.txt --verbose=1
+        /usr/bin/gcc  -coverage -lgcov  CMakeFiles/cmTC_88fb3.dir/src.c.o -o cmTC_88fb3
+        /usr/bin/ld: CMakeFiles/cmTC_88fb3.dir/src.c.o: in function `main':
+        src.c:(.text+0x46): undefined reference to `pthread_create'
+        /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+        /usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+        /usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
         collect2: error: ld returned 1 exit status
-        make[1]: *** [CMakeFiles/cmTC_02c3e.dir/build.make:99: cmTC_02c3e] Error 1
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-XTivdl'
-        make: *** [Makefile:127: cmTC_02c3e/fast] Error 2
+        make[1]: *** [CMakeFiles/cmTC_88fb3.dir/build.make:99: cmTC_88fb3] Error 1
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-gLHM2f'
+        make: *** [Makefile:127: cmTC_88fb3/fast] Error 2
         
       exitCode: 2
   -
@@ -875,31 +1120,31 @@ events:
     backtrace:
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:136 (try_compile)"
       - "/home/leqian/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:169 (_threads_check_flag_pthread)"
-      - "CMakeLists.txt:45 (find_package)"
+      - "CMakeLists.txt:47 (find_package)"
     checks:
       - "Check if compiler accepts -pthread"
     directories:
-      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj"
-      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj"
+      source: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f"
+      binary: "/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: " -g -O1 -coverage -fprofile-arcs -ftest-coverage"
-      CMAKE_CXX_FLAGS_DEBUG: "-g -O1 -coverage -fprofile-arcs -ftest-coverage"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: " -coverage -lgcov"
     buildResult:
       variable: "THREADS_HAVE_PTHREAD_ARG"
       cached: true
       stdout: |
-        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj'
+        Change Dir: '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f'
         
-        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7131b/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_7131b.dir/build.make CMakeFiles/cmTC_7131b.dir/build
-        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj'
-        Building CXX object CMakeFiles/cmTC_7131b.dir/CheckForPthreads.cxx.o
-        /usr/bin/c++   -g -O1 -coverage -fprofile-arcs -ftest-coverage  -std=gnu++2a -o CMakeFiles/cmTC_7131b.dir/CheckForPthreads.cxx.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj/CheckForPthreads.cxx
-        Linking CXX executable cmTC_7131b
-        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7131b.dir/link.txt --verbose=1
-        /usr/bin/c++  -g -O1 -coverage -fprofile-arcs -ftest-coverage   -coverage -lgcov  CMakeFiles/cmTC_7131b.dir/CheckForPthreads.cxx.o -o cmTC_7131b  -pthread
-        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-Z7dsnj'
+        Run Build Command(s): /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1db39/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_1db39.dir/build.make CMakeFiles/cmTC_1db39.dir/build
+        make[1]: Entering directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f'
+        Building C object CMakeFiles/cmTC_1db39.dir/CheckForPthreads.c.o
+        /usr/bin/gcc    -o CMakeFiles/cmTC_1db39.dir/CheckForPthreads.c.o -c /home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f/CheckForPthreads.c
+        Linking C executable cmTC_1db39
+        /home/leqian/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1db39.dir/link.txt --verbose=1
+        /usr/bin/gcc  -coverage -lgcov  CMakeFiles/cmTC_1db39.dir/CheckForPthreads.c.o -o cmTC_1db39  -pthread
+        make[1]: Leaving directory '/home/leqian/PathORAM/build/CMakeFiles/CMakeScratch/TryCompile-MR8o8f'
         
       exitCode: 0
 ...

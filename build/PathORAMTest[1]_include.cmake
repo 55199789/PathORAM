@@ -1,5 +1,0 @@
-if(EXISTS "/home/leqian/PathORAM/build/PathORAMTest[1]_tests.cmake")
-  include("/home/leqian/PathORAM/build/PathORAMTest[1]_tests.cmake")
-else()
-  add_test(PathORAMTest_NOT_BUILT PathORAMTest_NOT_BUILT)
-endif()

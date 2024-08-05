@@ -21,13 +21,13 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+//No help, variable specified on the command line.
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -52,8 +52,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -229,53 +229,20 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Path to a library.
-GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_LIBRARY_DEBUG:FILEPATH=GMOCK_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a file.
-GTEST_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-GTEST_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgtest.a
-
-//Path to a library.
-GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgtest_main.a
-
-//Path to a library.
-GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//The directory containing a CMake configuration file for GTest.
-GTest_DIR:PATH=GTest_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for NLopt.
 NLopt_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/nlopt
-
-//Value Computed by CMake
-ORAM_BINARY_DIR:STATIC=/home/leqian/PathORAM/build
-
-//Value Computed by CMake
-ORAM_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-ORAM_SOURCE_DIR:STATIC=/home/leqian/PathORAM
 
 //CXX compiler flags for OpenMP parallelization
 OpenMP_CXX_FLAGS:STRING=-fopenmp
 
 //CXX compiler libraries for OpenMP parallelization
 OpenMP_CXX_LIB_NAMES:STRING=gcov;gomp;gcov;pthread
+
+//C compiler flags for OpenMP parallelization
+OpenMP_C_FLAGS:STRING=-fopenmp
+
+//C compiler libraries for OpenMP parallelization
+OpenMP_C_LIB_NAMES:STRING=gcov;gomp;gcov;pthread
 
 //Path to the gcov library for OpenMP
 OpenMP_gcov_LIBRARY:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/10/libgcov.a
@@ -295,20 +262,8 @@ PathORAM_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 PathORAM_SOURCE_DIR:STATIC=/home/leqian/PathORAM
 
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/leqian/PathORAM/build
-
-//Value Computed by CMake
-Project_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/leqian/PathORAM
-
 //The directory containing a CMake configuration file for TBB.
 TBB_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/TBB
-
-//The directory containing a CMake configuration file for benchmark.
-benchmark_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/benchmark
 
 
 ########################
@@ -381,6 +336,8 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
+CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
@@ -460,42 +417,34 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding GTest
-FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/x86_64-linux-gnu/libgtest.a][/usr/include][/usr/lib/x86_64-linux-gnu/libgtest_main.a][v()]
 //Details about finding OpenMP
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][c ][v4.5()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v4.5()]
+//Details about finding OpenMP_C
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/10/libgcov.a][/usr/lib/gcc/x86_64-linux-gnu/10/libgomp.so][/usr/lib/gcc/x86_64-linux-gnu/10/libgcov.a][/usr/lib/x86_64-linux-gnu/libpthread.so][v4.5()]
 //Details about finding OpenMP_CXX
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/10/libgcov.a][/usr/lib/gcc/x86_64-linux-gnu/10/libgomp.so][/usr/lib/gcc/x86_64-linux-gnu/10/libgcov.a][/usr/lib/x86_64-linux-gnu/libpthread.so][v4.5()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//ADVANCED property for variable: GMOCK_LIBRARY
-GMOCK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
-GMOCK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY
-GMOCK_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY_DEBUG
-GMOCK_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_INCLUDE_DIR
-GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY
-GTEST_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
-GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY
-GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
-GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //Result of TRY_COMPILE
 OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_C_fopenmp:INTERNAL=TRUE
 //ADVANCED property for variable: OpenMP_CXX_FLAGS
 OpenMP_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenMP_CXX_LIB_NAMES
 OpenMP_CXX_LIB_NAMES-ADVANCED:INTERNAL=1
 //CXX compiler's OpenMP specification date
 OpenMP_CXX_SPEC_DATE:INTERNAL=201511
+//ADVANCED property for variable: OpenMP_C_FLAGS
+OpenMP_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_C_LIB_NAMES
+OpenMP_C_LIB_NAMES-ADVANCED:INTERNAL=1
+//C compiler's OpenMP specification date
+OpenMP_C_SPEC_DATE:INTERNAL=201511
 //Result of TRY_COMPILE
 OpenMP_SPECTEST_CXX_:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_C_:INTERNAL=TRUE
 //ADVANCED property for variable: OpenMP_gcov_LIBRARY
 OpenMP_gcov_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenMP_gomp_LIBRARY

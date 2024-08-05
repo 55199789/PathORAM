@@ -116,6 +116,80 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named PathORAMLib
+
+# Build rule for target.
+PathORAMLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PathORAMLib
+.PHONY : PathORAMLib
+
+# fast build rule for target.
+PathORAMLib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAMLib.dir/build.make CMakeFiles/PathORAMLib.dir/build
+.PHONY : PathORAMLib/fast
+
+#=============================================================================
+# Target rules for targets named PathORAM
+
+# Build rule for target.
+PathORAM: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PathORAM
+.PHONY : PathORAM
+
+# fast build rule for target.
+PathORAM/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAM.dir/build.make CMakeFiles/PathORAM.dir/build
+.PHONY : PathORAM/fast
+
+app/main.o: app/main.cpp.o
+.PHONY : app/main.o
+
+# target to build an object file
+app/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAM.dir/build.make CMakeFiles/PathORAM.dir/app/main.cpp.o
+.PHONY : app/main.cpp.o
+
+app/main.i: app/main.cpp.i
+.PHONY : app/main.i
+
+# target to preprocess a source file
+app/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAM.dir/build.make CMakeFiles/PathORAM.dir/app/main.cpp.i
+.PHONY : app/main.cpp.i
+
+app/main.s: app/main.cpp.s
+.PHONY : app/main.s
+
+# target to generate assembly for a file
+app/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAM.dir/build.make CMakeFiles/PathORAM.dir/app/main.cpp.s
+.PHONY : app/main.cpp.s
+
+src/tmp.o: src/tmp.cpp.o
+.PHONY : src/tmp.o
+
+# target to build an object file
+src/tmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAMLib.dir/build.make CMakeFiles/PathORAMLib.dir/src/tmp.cpp.o
+.PHONY : src/tmp.cpp.o
+
+src/tmp.i: src/tmp.cpp.i
+.PHONY : src/tmp.i
+
+# target to preprocess a source file
+src/tmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAMLib.dir/build.make CMakeFiles/PathORAMLib.dir/src/tmp.cpp.i
+.PHONY : src/tmp.cpp.i
+
+src/tmp.s: src/tmp.cpp.s
+.PHONY : src/tmp.s
+
+# target to generate assembly for a file
+src/tmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PathORAMLib.dir/build.make CMakeFiles/PathORAMLib.dir/src/tmp.cpp.s
+.PHONY : src/tmp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... PathORAM"
+	@echo "... PathORAMLib"
+	@echo "... app/main.o"
+	@echo "... app/main.i"
+	@echo "... app/main.s"
+	@echo "... src/tmp.o"
+	@echo "... src/tmp.i"
+	@echo "... src/tmp.s"
 .PHONY : help
 
 
