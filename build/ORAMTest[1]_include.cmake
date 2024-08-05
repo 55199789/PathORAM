@@ -1,0 +1,5 @@
+if(EXISTS "/home/leqian/PathORAM/build/ORAMTest[1]_tests.cmake")
+  include("/home/leqian/PathORAM/build/ORAMTest[1]_tests.cmake")
+else()
+  add_test(ORAMTest_NOT_BUILT ORAMTest_NOT_BUILT)
+endif()
