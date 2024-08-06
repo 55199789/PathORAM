@@ -54,8 +54,8 @@ namespace _ORAM::ORAMClientInterface
     explicit ORAMClientInterface(uint64_t N) : N_(N), L_(CeilLog2(N)), V_(1ULL << ((L_ + 1 + LEVELS_PER_PACK - 1) / LEVELS_PER_PACK * LEVELS_PER_PACK)), server(*EM::Backend::g_DefaultBackend, V_ / LargeBucket_t::BUCKETS_PER_PACK + 2, LargeBucket_t::DUMMY())
                                                                                                                                                              OCI_ONLY(, verifier(L_))
     {
-      TRACE_FUNCTION(N);
-      PROFILE_F();
+      // TRACE_FUNCTION(N);
+      // PROFILE_F();
       // std::cerr << "oci.N_: " << N_ << std::endl;
       // std::cerr << "oci.L_: " << L_ << std::endl;
       // std::cerr << "oci.V_: " << V_ << std::endl;

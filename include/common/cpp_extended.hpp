@@ -131,6 +131,18 @@ inline _defer_class<F> _create_defer_class(F &&f)
 #define DEBUG_ONLY(...)
 #endif
 
+#define Assert(expr, ...)                                                                   \
+    if (expr) [[likely]]                                                                    \
+    {                                                                                       \
+    }                                                                                       \
+    else                                                                                    \
+    {                                                                                       \
+        X_LOG("Assertion violated: {", #expr, "}" __VA_OPT__(, NAMED_VALUES(__VA_ARGS__))); \
+        X_FAIL();                                                                           \
+    }
+#define X_LOG(...) LogWrapper(__FILE__, __LINE__, __VA_ARGS__, "\n")
+#define X_LOG_SIMPLE(...) LogWrapper<false, false>(__FILE__, __LINE__, __VA_ARGS__)
+
 // A preprocessor argument counter
 #define COUNT(...) COUNT_I(__VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, )
 #define COUNT_I(_9, _8, _7, _6, _5, _4, _3, _2, _1, X, ...) X
