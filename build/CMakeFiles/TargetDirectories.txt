@@ -1,4 +1,0 @@
-/home/leqian/PathORAM/build/CMakeFiles/PathORAMLib.dir
-/home/leqian/PathORAM/build/CMakeFiles/PathORAM.dir
-/home/leqian/PathORAM/build/CMakeFiles/edit_cache.dir
-/home/leqian/PathORAM/build/CMakeFiles/rebuild_cache.dir
