@@ -4,7 +4,7 @@
 // ORAM bucket sizes:
 // For PathORAM bucket size = ORAM__Z, for RingORAM = ORAM__Z + ORAM__S
 #define ORAM__Z 4
-#define ORAM__S 2
+#define ORAM__S 0
 
 // Parameter A from Ring ORAM (number of accesses between reshufles)
 #define ORAM__A 3

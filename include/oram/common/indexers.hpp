@@ -6,13 +6,6 @@ namespace _ORAM
   namespace Indexers
   {
     using namespace _ORAM;
-    // Get (pos+depth) index in heap-array format. Assumes there are (L+1) levels for the assertions.
-    // Representation: (format: rv {pos}  (height is depth))
-    // 0 {0-7}
-    // 1 {0-3} 2 {4-7}
-    // 3 4 5 6
-    // 7 8 9 10 11 12 13 14
-    // {0} {1} {2} {3} {4} {5} {6} {7}
     template <bool Disableassertions = false>
     INLINE Index GetArrIndex(const Index L, const Position pos, const Index depth)
     {
@@ -53,7 +46,8 @@ namespace _ORAM
         }
       }
 
-      assert(false, "deadcode", L, pos, target_path);
+      // assert(false, "deadcode", L, pos, target_path);
+      assert(false);
       return -1;
     }
 
@@ -75,21 +69,13 @@ namespace _ORAM
     INLINE Index GetHBIndex(const Index L, const Position pos, const Index depth)
     {
       constexpr Index BUCKETS_PER_PACK = (1 << LEVELS_PER_PACK) - 1;
-      assert(depth % LEVELS_PER_PACK == 0, "Please use the root instead of ", pos);
+      assert(depth % LEVELS_PER_PACK == 0); // , "Please use the root instead of ", pos);
       // X_LOG_SIMPLE(NAMED_VALUES(pos, depth, ((-1 + (1<<depth)) / LargeBucket::BUCKETS_PER_PACK), (pos >> (L_ - depth))));
       Index lBDepth = (depth / LEVELS_PER_PACK);
       Index ret = ((-1 + (1 << depth)) / BUCKETS_PER_PACK) + (pos >> (L - depth));
       return ret;
     }
 
-    // This is the eb-position of a block inside a large block (assuming LB_LEVELS=3):
-    // 0
-    // 1 2
-    // 3 4 5 6
-    // 0 0 0 0 0 0 0 0
-    // 1 2 1 2 1 2 1 2 ...
-    // 3 4 5 6 3 4 5 6 3 4 5 6 3 4 5 6 ...
-    // ...
     template <unsigned int LEVELS_PER_PACK>
     INLINE Index GetLBIndex(const Index L, const Position pos, const Index depth)
     {
@@ -108,7 +94,6 @@ namespace _ORAM
       innerIdx = Indexers::GetLBIndex<LEVELS_PER_PACK>(L, pos, depth);
     }
 
-    // Informs if two paths still intercept at a given depth
     template <unsigned int LEVELS_PER_PACK>
     INLINE bool PathsIntercept(const Index L, const Position path1, const Position path2, const Index depth)
     {

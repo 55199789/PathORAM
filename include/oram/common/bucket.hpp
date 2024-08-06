@@ -39,38 +39,24 @@ namespace _ORAM::Bucket
     static inline constexpr unsigned int _Z = Z;
     static inline constexpr unsigned int BUCKET_SIZE = _Z;
 
-#ifndef ENCLAVE_MODE
-    friend std::ostream &operator<<(std::ostream &o, const DefaultBucketMetadata &x)
-    {
-      o << "{" << std::endl;
-      for (int i = 0; i < BUCKET_SIZE; i++)
-      {
-        if (x.priv.addresses[i] == ORAMAddress::DUMMY())
-        {
-          continue;
-        }
-        o << i << ": " << x.priv.addresses[i] << std::endl;
-      }
-      o << "}";
-      return o;
-    }
-#endif
-
-    static INLINE CLANG_OR_GCC(constexpr, consteval) DefaultBucketMetadata DUMMY()
+    static INLINE constexpr DefaultBucketMetadata DUMMY()
     {
       DefaultBucketMetadata ret;
       for (int i = 0; i < Z; i++)
-      {
         ret.priv.addresses[i] = ORAMAddress::DUMMY();
-      }
       return ret;
     }
 
-    using Encrypted_t = typename std::conditional_t<ENCRYPT_BLOCKS, MixedEncrypted<DefaultBucketMetadata>, NonEncrypted<DefaultBucketMetadata>>;
+    using Encrypted_t = NonEncrypted<DefaultBucketMetadata>;
   };
 
   template <
-      typename Block = _ORAM::Block::Block<>, unsigned int Z = ORAM__Z, unsigned int S = 0, bool ENCRYPT_BLOCKS = ORAM__ENCRYPT_BLOCKS, typename BucketMetadata = DefaultBucketMetadata<Z, S, ENCRYPT_BLOCKS>, bool ENCRYPT_BUCKETS = ORAM__ENCRYPT_BUCKETS>
+      typename Block = _ORAM::Block::Block<>,
+      unsigned int Z = ORAM__Z,
+      unsigned int S = 0,
+      bool ENCRYPT_BLOCKS = ORAM__ENCRYPT_BLOCKS,
+      typename BucketMetadata = DefaultBucketMetadata<Z, S, ENCRYPT_BLOCKS>,
+      bool ENCRYPT_BUCKETS = ORAM__ENCRYPT_BUCKETS>
   struct Bucket
   {
     static inline constexpr unsigned int BUCKET_SIZE = S + Z;
@@ -89,7 +75,7 @@ namespace _ORAM::Bucket
     BucketMetadata_t md;
     Block_t blocks[BUCKET_SIZE];
 
-    static INLINE CLANG_OR_GCC(constexpr, consteval) Bucket DUMMY()
+    static INLINE constexpr Bucket DUMMY()
     {
       Bucket ret;
       ret.md = BucketMetadata_t::DUMMY();
@@ -99,30 +85,7 @@ namespace _ORAM::Bucket
       }
       return ret;
     }
-
-// overload ostream
-#ifndef ENCLAVE_MODE
-    friend std::ostream &operator<<(std::ostream &o, const Bucket &x)
-    {
-      o << "{" << std::endl;
-      o << " md: " << x.md << std::endl;
-      for (int i = 0; i < BUCKET_SIZE; i++)
-      {
-        if (x.blocks[i] == Block::DUMMY())
-        {
-          continue;
-        }
-        o << i << ": " << x.blocks[i] << std::endl;
-      }
-      o << "}";
-      return o;
-    }
-#endif
-
-    // UNDONE(): We want the bucket to forward encryptions, as, for instance,
-    // Metadata is only partially encrypted.
-    //
-    using Encrypted_t = std::conditional_t<ENCRYPT_BUCKETS, Encrypted<Bucket>, NonEncrypted<Bucket>>;
+    using Encrypted_t = NonEncrypted<Bucket>;
   };
   // </struct Bucket>
 
@@ -133,7 +96,9 @@ namespace _ORAM::Bucket
 
 namespace _ORAM::LargeBucket
 {
-  template <typename Bucket = _ORAM::Bucket::Bucket<>, bool ENCRYPT_LARGE_BUCKETS = ORAM_SERVER__ENCRYPT_LARGE_BUCKETS, unsigned int LEVELS_PER_PACK = ORAM_SERVER__LEVELS_PER_PACK>
+  template <typename Bucket = _ORAM::Bucket::Bucket<>,
+            bool ENCRYPT_LARGE_BUCKETS = ORAM_SERVER__ENCRYPT_LARGE_BUCKETS,
+            unsigned int LEVELS_PER_PACK = ORAM_SERVER__LEVELS_PER_PACK>
   struct LargeBucket
   {
     static inline constexpr uint64_t BUCKETS_PER_PACK = (1 << LEVELS_PER_PACK) - 1; // 1 + 2 + 4 + 8
@@ -146,7 +111,7 @@ namespace _ORAM::LargeBucket
 
     Bucket buckets[BUCKETS_PER_PACK];
 
-    static INLINE CLANG_OR_GCC(constexpr, consteval) LargeBucket DUMMY()
+    static INLINE constexpr LargeBucket DUMMY()
     {
       LargeBucket ret;
       for (int i = 0; i < BUCKETS_PER_PACK; i++)
@@ -156,7 +121,7 @@ namespace _ORAM::LargeBucket
       return ret;
     }
 
-    using Encrypted_t = std::conditional_t<ENCRYPT_LARGE_BUCKETS, Encrypted<LargeBucket>, NonEncrypted<LargeBucket>>;
+    using Encrypted_t = NonEncrypted<LargeBucket>;
   }; // struct LargeBucket
 
   static_assert(IS_POD<LargeBucket<>>());

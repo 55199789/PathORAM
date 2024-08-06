@@ -5,6 +5,15 @@
 
 #include "common/utils.hpp"
 #include "common/encutils.hpp"
+
+namespace Concepts
+{
+    template <typename T>
+    concept Encryptable = requires(typename T::Encrypted_t et) {
+        { et };
+    };
+}
+
 template <typename T>
 struct NonEncrypted
 {
@@ -39,3 +48,21 @@ struct NonEncrypted
     }
 };
 static_assert(IS_POD<NonEncrypted<int>>());
+
+template <typename PublicData, typename PrivateData>
+    requires(IS_POD<PublicData>()) && (IS_POD<PrivateData>()) && ::Concepts::Encryptable<PrivateData>
+struct MixedEncryptable
+{
+    using PublicData_t = PublicData;
+    using PrivateData_t = PrivateData;
+    PublicData pub;
+    PrivateData priv;
+
+    bool operator==(const MixedEncryptable &o) const
+    {
+        return (pub == o.pub) * (priv == o.priv);
+    }
+
+    // Classes that extend this need to declare Encrypted_t.
+    //
+};

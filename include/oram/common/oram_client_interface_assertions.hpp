@@ -41,11 +41,11 @@ namespace _ORAM::ORAMClientInterface
       if (checkdata_metadata.contains(location))
       {
         BucketMetadata_t &expected = checkdata_metadata[location];
-        assert(expected == ret, "\n", expected, "\n", ret, pos, realPos, depth, ret, ret);
+        assert(expected == ret); // , "\n", expected, "\n", ret, pos, realPos, depth, ret, ret);
       }
       else
       {
-        assert(ret == BucketMetadata_t::DUMMY(), "\n", ret, pos, realPos, depth, ret, ret);
+        assert(ret == BucketMetadata_t::DUMMY()); // , "\n", ret, pos, realPos, depth, ret, ret);
       }
     }
 
@@ -61,11 +61,11 @@ namespace _ORAM::ORAMClientInterface
       if (checkdata_block.contains(location))
       {
         auto &expected = checkdata_block[location];
-        assert(expected == ret, "\n", expected, "\n", ret);
+        assert(expected == ret); // , "\n", expected, "\n", ret);
       }
       else
       {
-        assert(ret == Block_t::DUMMY(), "\n", ret);
+        assert(ret == Block_t::DUMMY()); // , "\n", ret);
       }
     }
 

@@ -60,19 +60,6 @@ namespace _ORAM::StashedBlock
     ORAMAddress oaddress;
     Block block;
 
-#ifndef ENCLAVE_MODE
-    friend std::ostream &operator<<(std::ostream &o, const StashedBlock &x)
-    {
-      o << "(";
-      if (x.cached)
-      {
-        o << "cached, ";
-      }
-      o << x.oaddress << ", " << x.block << ")";
-      return o;
-    }
-#endif
-
     static consteval INLINE StashedBlock DUMMY()
     {
       return StashedBlock{
