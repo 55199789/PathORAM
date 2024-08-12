@@ -4,12 +4,9 @@
 #include <vector>
 
 #include "common/lrucache.hpp"
-#include "common/tracing/tracer.hpp"
 #include "external_memory/server/serverAllocator.hpp"
 
-#ifndef ENCLAVE_MODE
 #include <concepts>
-#endif
 
 #ifndef IO_ROUND
 #define IO_ROUND 1
@@ -46,24 +43,19 @@ struct ServerBackend : EM::LargeBlockAllocator {
 };
 
 struct MemServerBackend : ServerBackend {
-  uint8_t* data;
-#ifndef ENCLAVE_MODE
+  uint8_t *data;
   void ocall_InitServer(uint8_t** data_ptr, uint64_t pageSize,
                         uint64_t numPage) {
     *data_ptr = new uint8_t[pageSize * numPage];
   }
 
   void ocall_DeleteServer() { delete[] (data); }
-#endif
-
-#ifndef DISK_IO
   void ocall_Read(uint64_t offset, uint64_t sz, uint8_t* tmp) {
     std::memcpy(tmp, &data[offset], sz);
   }
   void ocall_Write(uint64_t offset, uint64_t sz, const uint8_t* tmp) {
     std::memcpy(&data[offset], tmp, sz);
   }
-#endif
 
   MemServerBackend(uint64_t _size) : ServerBackend(_size) {
     ocall_InitServer(&data, 4096, (size - 1) / 4096 + 1);
@@ -96,7 +88,6 @@ struct MemServerBackend : ServerBackend {
 
   Chunks readChunks, writeChunks;
 
-#ifndef DISK_IO
   void ocall_Read_Batch(uint64_t* offsets, uint64_t* sizes, uint8_t* tmp,
                         uint64_t chunkNum, uint64_t totalSize) {
     uint8_t* pos = tmp;
@@ -117,7 +108,6 @@ struct MemServerBackend : ServerBackend {
       pos += size;
     }
   }
-#endif
 
   void ReadLazy(uint64_t offset, uint64_t sz, uint8_t* to,
                 PageSlotState& state) {

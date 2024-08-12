@@ -5,7 +5,6 @@
 #include "common/dmcache.hpp"
 #include "common/encrypted.hpp"
 #include "common/lrucache.hpp"
-#include "common/tracing/tracer.hpp"
 #include "common/utils.hpp"
 #include "external_memory/server/cached.hpp"
 #include "external_memory/server/serverAllocator.hpp"
@@ -117,7 +116,6 @@ struct NonCachedServerFrontendInstance {
       if constexpr (LATE_INIT) {
         modified[i] = true;
       }
-      PERFCTR_INCREMENT(writeCount);
       if constexpr (ENCRYPTED) {
         typename T::Encrypted_t inEnc;
         inEnc.Encrypt(in);
@@ -136,7 +134,6 @@ struct NonCachedServerFrontendInstance {
     if constexpr (LATE_INIT) {
       modified[i] = true;
     }
-    PERFCTR_INCREMENT(writeCount);
 
     typename T::Encrypted_t inEnc;
     nounce_t nounceCopy = nounce;
@@ -168,7 +165,6 @@ struct NonCachedServerFrontendInstance {
           return;
         }
       }
-      PERFCTR_INCREMENT(readCount);
 
       if constexpr (ENCRYPTED) {
         typename T::Encrypted_t inEnc;
@@ -190,7 +186,6 @@ struct NonCachedServerFrontendInstance {
         return;
       }
     }
-    PERFCTR_INCREMENT(readCount);
     nounce_t nounceCopy = nounce;
     nounceCopy.identifiers.indexPart ^= i;
     nounceCopy.identifiers.counterPart ^= counter;

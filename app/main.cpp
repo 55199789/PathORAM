@@ -2,7 +2,7 @@
 #include "oram/common/block.hpp"
 #include "oram/common/bucket.hpp"
 #include "oram/common/indexers.hpp"
-#include "oram/common/oram_client_interface_assertions.hpp"
+#include "oram/common/oram_client_interface.hpp"
 
 int main()
 {

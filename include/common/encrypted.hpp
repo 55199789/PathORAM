@@ -6,6 +6,8 @@
 #include "common/utils.hpp"
 #include "common/encutils.hpp"
 
+#define IV_SIZE 12
+
 namespace Concepts
 {
     template <typename T>

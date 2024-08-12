@@ -90,7 +90,6 @@ namespace _ORAM::ORAMClientInterface
           }
           cache.EvictLRU(evictedIndex);
         }
-        // UNDONE(): How to make perfect forwarding here?
         //
         {
           LargeBucket_t lb;

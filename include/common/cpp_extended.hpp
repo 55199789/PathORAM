@@ -27,8 +27,6 @@ inline void Log_Recursive(const char *file, int line, std::ostringstream &msg)
         std::cerr << "[" << file << ":" << line << "]: ";
     }
     std::cerr << msg.str();
-
-    // ocall_print_string(msg.str().c_str());
 }
 
 template <typename T>

@@ -53,8 +53,6 @@ struct Vector {
 
   Server server;
 
-  // UNDONE: fileserver here.
-  //
   uint64_t N;
 
   // https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp

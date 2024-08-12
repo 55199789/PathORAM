@@ -1,11 +1,7 @@
 
 #pragma once
 
-#ifdef DISK_IO
-#include "external_memory/server/batchFrontend.hpp"
-#else
 #include "external_memory/server/serverFrontend.hpp"
-#endif
 
 // In this file we define a vector that is partially in internal memory
 // and partially in external memory. The interface for this vector is similar
@@ -55,15 +51,8 @@ struct Vector {
 
   Page& getPageInstance() { return cachePage; }
 
-// using Server =
-// EM::MemoryServer::NonCachedServerFrontendInstance<Page,::EM::Backend::MemServerBackend,ENCRYPTED>;
-#ifdef DISK_IO
-  using Server = EM::MemoryServer::NonCachedBatchServerFrontend<
-      Page, ::EM::Backend::MemServerBackend, ENCRYPTED, AUTH, LATE_INIT>;
-#else
   using Server = EM::MemoryServer::NonCachedServerFrontendInstance<
       Page, ::EM::Backend::MemServerBackend, ENCRYPTED, AUTH, LATE_INIT>;
-#endif
 
   // fileserver here.
   //
@@ -373,12 +362,6 @@ static OutputIterator CopyOut(InputIterator begin, InputIterator end,
   size_t toEndPageIdx = toEnd.get_page_idx();
 
   auto from = begin;
-
-  // if constexpr (auth) {
-  //     if (toBeginOffset || toEndOffset) {
-  //         dbg_printf("Copy out not aligned\n");
-  //     }
-  // }
 
   if (toBeginPageIdx == toEndPageIdx) {  // within a single page
     if (inputSize) {

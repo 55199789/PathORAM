@@ -5,7 +5,6 @@
 
 #include "common/defs.hpp"
 #include "common/dmcache.hpp"
-#include "common/tracing/perf.hpp"
 
 #define USE_LRU_FLAG false
 
@@ -26,11 +25,11 @@ struct Cached : S {
   using S::S;
 
   template <bool dirty = true, bool skip_read = false, bool writeBack = true>
-  T& AccessLRU(const IndexType i) {
-    PERFCTR_INCREMENT(accessCount);
+  T &AccessLRU(const IndexType i)
+  {
     T* TLB_result = cache.AccessTLB(i, dirty, writeBack);
-    if (TLB_result) {
-      PERFCTR_INCREMENT(tlbHitCount);
+    if (TLB_result)
+    {
       return *TLB_result;
     }
 
@@ -57,8 +56,8 @@ struct Cached : S {
   }
 
   template <bool dirty = true, bool skip_read = false, bool writeBack = true>
-  T& AccessDM(const IndexType i) {
-    PERFCTR_INCREMENT(accessCount);
+  T &AccessDM(const IndexType i)
+  {
     auto& mappedSlot = cache.GetMappedSlot(i);
     if (mappedSlot.idx != i) {
       if (mappedSlot.dirty) {

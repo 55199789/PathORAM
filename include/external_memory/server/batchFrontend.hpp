@@ -41,8 +41,8 @@ struct NonCachedBatchServerFrontend
 
   // read index i to out, but does not need result until flush read is called
   // return a counter that can be used to check if the page is read
-  uint64_t ReadLazy(const IndexType i, T& out, uint32_t auth_counter) {
-    PERFCTR_INCREMENT(readCount);
+  uint64_t ReadLazy(const IndexType i, T &out, uint32_t auth_counter)
+  {
     if constexpr (LATE_INIT) {
       if (!_Base::modified[i]) {
         out = _Base::defaultVal;
@@ -95,8 +95,8 @@ struct NonCachedBatchServerFrontend
 
   // write in to index i, but does not need result until flush write is called
   // return a counter that can be used to check if the page is written
-  uint64_t WriteLazy(const IndexType i, T& in, uint32_t auth_counter) {
-    PERFCTR_INCREMENT(writeCount);
+  uint64_t WriteLazy(const IndexType i, T &in, uint32_t auth_counter)
+  {
     if constexpr (LATE_INIT) {
       _Base::modified[i] = true;
     }

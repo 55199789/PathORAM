@@ -4,7 +4,6 @@
 
 #include "common/dmcache.hpp"
 #include "common/lrucache.hpp"
-#include "common/tracing/tracer.hpp"
 #include "common/utils.hpp"
 #include "common/encrypted.hpp"
 #include "external_memory/server/cached.hpp"
@@ -103,7 +102,6 @@ struct DynamicServerFrontendInstance {
 
   void Write(const IndexType i, const void* in, uint32_t counter) {
     // static_assert(AUTH);
-    PERFCTR_INCREMENT(writeCount);
 
     nounce_t nounceCopy = nounce;
     nounceCopy.identifiers.indexPart ^= i;
@@ -119,8 +117,8 @@ struct DynamicServerFrontendInstance {
 
   void Read(const IndexType i, void* out) { Read(i, out, 0); }
 
-  void Read(const IndexType i, void* out, uint32_t counter) {
-    PERFCTR_INCREMENT(readCount);
+  void Read(const IndexType i, void *out, uint32_t counter)
+  {
     nounce_t nounceCopy = nounce;
     nounceCopy.identifiers.indexPart ^= i;
     nounceCopy.identifiers.counterPart ^= counter;
