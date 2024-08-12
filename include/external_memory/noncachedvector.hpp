@@ -218,76 +218,6 @@ struct Vector {
     }
     bool eof() { return end <= it; }
   };
-
-#ifdef DISK_IO
-  struct PrefetchReader {
-    static const uint64_t cacheCapacity = Server::bufferCapacity;
-    Page cache[cacheCapacity];
-    Iterator it;
-    Iterator end;
-    T* curr = (T*)UINT64_MAX;
-    size_t endPageIdx;
-    uint32_t counter;
-
-    PrefetchReader() {}
-
-    // no translation by default
-    INLINE virtual uint64_t translatePageIdx(uint64_t pageIdx) {
-      return pageIdx;
-    }
-
-    virtual ~PrefetchReader() = default;
-
-    PrefetchReader(Iterator _begin, Iterator _end, uint32_t _counter = 0,
-                   uint64_t _heapSize = 0)
-        : it(_begin),
-          end(_end),
-          endPageIdx((_end - 1).get_page_idx() + 1),
-          counter(_counter) {}
-
-    void init(Iterator _begin, Iterator _end, uint32_t _counter = 0) {
-      it = _begin;
-      end = _end;
-      endPageIdx = (_end - 1).get_page_idx() + 1;
-      counter = _counter;
-    }
-
-    T& get() {
-      Assert(!eof());
-      if (curr >= (T*)(cache + cacheCapacity)) {
-        auto& vec = it.getVector();
-        const size_t pageIdx = it.get_page_idx();
-        size_t cachePageBeginIdx = pageIdx;
-        size_t cachePageEndIdx =
-            std::min(cachePageBeginIdx + cacheCapacity, endPageIdx);
-        for (size_t i = cachePageBeginIdx, cacheIdx = 0; i < cachePageEndIdx;
-             ++i, ++cacheIdx) {
-          if constexpr (AUTH) {
-            vec.server.ReadLazy(translatePageIdx(i), cache[cacheIdx], counter);
-          } else {
-            vec.server.ReadLazy(translatePageIdx(i), cache[cacheIdx]);
-          }
-        }
-        vec.server.flushRead();
-        if (curr != (T*)(cache + cacheCapacity)) {
-          curr = cache[0].pages + it.get_page_offset();
-        } else {
-          curr = (T*)cache;
-        }
-      }
-      return *curr;
-    }
-
-    const T& read() {
-      Assert(!eof());
-      const T& val = get();
-      ++it;
-      ++curr;
-      return val;
-    }
-    bool eof() { return end <= it; }
-  };
-#else
   struct PrefetchReader : Reader {
     PrefetchReader() {}
 
@@ -295,109 +225,11 @@ struct Vector {
                    uint64_t _heapSize = 0)
         : Reader(_begin, _end, _counter) {}
   };
-#endif
-
-#ifdef DISK_IO
-  // when there are multiple readers for the same frontend, e.g., external
-  // merge sort. the reader always send read requests for all its cache pages
-  // in advanced, and check if the job is done by the time it read those pages
-  // the advantage is that the requests for multipler readers can be
-  // interleaved and the most on-demand pages can be handled first
-  struct LazyPrefetchReader {
-    std::vector<Page> cache;  // ring cache
-
-    std::vector<uint64_t> jobCounters;
-    const uint64_t cacheCapacity;
-    Iterator it;
-    Iterator end;
-    T* curr = (T*)UINT64_MAX;
-    T* currPageEnd = (T*)UINT64_MAX;
-    const size_t endPageIdx;
-    uint32_t counter;
-#ifndef NDEBUG
-    bool hasInit = false;
-#endif
-    LazyPrefetchReader(Iterator _begin, Iterator _end, uint32_t counter = 0,
-                       size_t cacheCapacity = 2)
-        : it(_begin),
-          end(_end),
-          cacheCapacity(cacheCapacity),
-          endPageIdx((_end - 1).get_page_idx() + 1),
-          counter(counter) {
-      Assert(cacheCapacity >= 2);
-    }
-
-    void init() {
-#ifndef NDEBUG
-      Assert(!hasInit);
-      hasInit = true;
-#endif
-      cache.resize(cacheCapacity);
-      jobCounters.resize(cacheCapacity);
-      curr = cache[0].pages + it.get_page_offset();
-      currPageEnd = cache[1].pages;
-      auto& vec = it.getVector();
-      for (size_t cacheIdx = 0, pageIdx = it.get_page_idx();
-           cacheIdx < cacheCapacity && pageIdx < endPageIdx;
-           ++cacheIdx, ++pageIdx) {
-        // printf("read %ld\n", pageIdx);
-        if constexpr (AUTH) {
-          jobCounters[cacheIdx] =
-              vec.server.ReadLazy(pageIdx, cache[cacheIdx], counter);
-        } else {
-          jobCounters[cacheIdx] = vec.server.ReadLazy(pageIdx, cache[cacheIdx]);
-        }
-      }
-      vec.server.flushRead();
-    }
-
-    uint64_t translatePageIdx(uint64_t) = delete;
-
-    T& get() {
-      Assert(hasInit);
-      Assert(!eof());
-      if (curr == currPageEnd) {
-        size_t prevCacheIdx = (Page*)currPageEnd - &cache[0] - 1;
-        size_t currCacheIdx = (prevCacheIdx + 1) % cacheCapacity;
-        auto& vec = it.getVector();
-        if (!vec.server.isJobDone(jobCounters[currCacheIdx])) {
-          vec.server.flushRead();
-          Assert(vec.server.isJobDone(jobCounters[currCacheIdx]));
-        }
-        size_t nextPageIdx = it.get_page_idx() + cacheCapacity - 1;
-        if (nextPageIdx < endPageIdx) {
-          // overwrite the previously cached page
-          // printf("read %ld\n", nextPageIdx);
-          if constexpr (AUTH) {
-            jobCounters[prevCacheIdx] =
-                vec.server.ReadLazy(nextPageIdx, cache[prevCacheIdx], counter);
-          } else {
-            jobCounters[prevCacheIdx] =
-                vec.server.ReadLazy(nextPageIdx, cache[prevCacheIdx]);
-          }
-        }
-        curr = (T*)(&cache[0] + currCacheIdx);  // at the begining of the page
-        currPageEnd = curr + item_per_page;
-      }
-      return *curr;
-    }
-
-    const T& read() {
-      Assert(!eof());
-      const T& val = get();
-      ++it;
-      ++curr;
-      return val;
-    }
-    bool eof() { return end <= it; }
-  };
-#else
   struct LazyPrefetchReader : Reader {
     LazyPrefetchReader(Iterator _begin, Iterator _end, uint32_t counter = 0)
         : Reader(_begin, _end, counter) {}
     void init() {}
   };
-#endif
 
   // writer always overwrites data between begin and end
   struct Writer {
