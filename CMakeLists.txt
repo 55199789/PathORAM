@@ -47,3 +47,11 @@ file(GLOB EXE_SOURCES "app/*.cpp")
 add_executable(PathORAM ${EXE_SOURCES})
 
 target_link_libraries(PathORAM PathORAMLib)
+
+# Add benchmarks
+find_package(benchmark REQUIRED)
+file(GLOB BENCHMARK_FILES "benchmarks/*.cpp")
+add_executable(PathORAMBenchmark ${BENCHMARK_FILES})
+target_link_libraries(PathORAMBenchmark
+  benchmark::benchmark
+  PathORAMLib)

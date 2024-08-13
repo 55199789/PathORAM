@@ -1,5 +1,6 @@
 #include "otree/otree.hpp"
 #include "oram/pathoram/oram.hpp"
+#include <sys/resource.h>
 #include <cassert>
 #include <iostream>
 #include <random>
@@ -32,6 +33,13 @@ private:
     std::chrono::steady_clock::time_point last_stop;
 };
 
+static long getMemoryUsage()
+{
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &usage);
+    return usage.ru_maxrss;
+}
+
 int main(int argc, char **argv)
 {
     std::random_device rd;
@@ -45,6 +53,7 @@ int main(int argc, char **argv)
     for (uint32_t i = 0; i < n; i++)
         data[i] = i;
     std::shuffle(data.begin(), data.end(), gen);
+    std::cout << "Memory usage before setup: " << getMemoryUsage() << " KB" << std::endl;
     Timer t;
     _OBST::OBST::OBST<OramClient> x(n);
     double create_time = t.get_interval_time();
@@ -61,5 +70,6 @@ int main(int argc, char **argv)
     }
     double search_time = t.get_interval_time();
     std::cout << "Search time: " << search_time << " s, avg " << search_time * 1000000.0 / T << " us/op" << std::endl;
+    std::cout << "Memory usage after setup: " << getMemoryUsage() << " KB" << std::endl;
     return 0;
 }
