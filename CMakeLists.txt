@@ -33,31 +33,15 @@ else()
   message(FATAL_ERROR "Unknown build type: " ${CMAKE_BUILD_TYPE})
 endif()
 
-SET(GCC_COVERAGE_LINK_FLAGS "-coverage -lgcov")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
-
-find_package(TBB REQUIRED)
-
-if(TBB_FOUND)
-  message("TBB found")
-else()
-  message(FATAL_ERROR "TBB not found")
-endif()
-
-find_package(OpenMP)
-
-set(THREADS_PREFER_PTHREAD_FLAG ON)
-find_package(Threads REQUIRED)
-
 include_directories(include)
+
+add_library(common include/external_memory/server/serverBackend.cpp)
 
 file(GLOB LIB_SOURCES "src/*.cpp")
 add_library(PathORAMLib ${LIB_SOURCES})
 target_link_libraries(PathORAMLib
-  TBB::tbb
-  Threads::Threads
-  OpenMP::OpenMP_CXX
-  crypto)
+  crypto
+  common)
 
 file(GLOB EXE_SOURCES "app/*.cpp")
 add_executable(PathORAM ${EXE_SOURCES})

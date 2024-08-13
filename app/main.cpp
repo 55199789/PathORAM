@@ -1,13 +1,19 @@
+#include "otree/otree.hpp"
+#include "oram/pathoram/oram.hpp"
+#include <cassert>
 #include <iostream>
-#include "oram/common/block.hpp"
-#include "oram/common/bucket.hpp"
-#include "oram/common/indexers.hpp"
-#include "oram/common/oram_client_interface.hpp"
+#include <chrono>
 
 int main()
 {
-    _ORAM::Bucket::DefaultBucketMetadata<> metadata;
-    _ORAM::Block::Block<_ORAM::Block::DefaultBlockData> block;
-    _ORAM::Indexers::GetArrIndex(1, 2, 3);
+    using ORAMClient = _ORAM::PathORAM::ORAMClient::ORAMClient<_OBST::Node, ORAM__Z, false, 4>;
+    using OramClient = _OBST::OramClient::OramClient<ORAMClient>;
+    _OBST::OBST::OBST<OramClient> x(4);
+    x.Insert(0, 32);
+    x.Insert(1, 10);
+    x.Insert(2, 10);
+    _OBST::V a;
+    std::cout << x.Get(0, a) << std::endl;
+    std::cout << a << std::endl;
     return 0;
 }

@@ -51,8 +51,12 @@ namespace _ORAM::ORAMClientInterface
     OCI_ONLY(
         ORAMInterfaceVerifier<Block, Bucket> verifier;)
 
-    explicit ORAMClientInterface(uint64_t N) : N_(N), L_(CeilLog2(N)), V_(1ULL << ((L_ + 1 + LEVELS_PER_PACK - 1) / LEVELS_PER_PACK * LEVELS_PER_PACK)), server(*EM::Backend::g_DefaultBackend, V_ / LargeBucket_t::BUCKETS_PER_PACK + 2, LargeBucket_t::DUMMY())
-                                                                                                                                                             OCI_ONLY(, verifier(L_))
+    explicit ORAMClientInterface(uint64_t N)
+        : N_(N), L_(CeilLog2(N)),
+          V_(1ULL << ((L_ + 1 + LEVELS_PER_PACK - 1) / LEVELS_PER_PACK * LEVELS_PER_PACK)),
+          server(*EM::Backend::g_DefaultBackend,
+                 V_ / LargeBucket_t::BUCKETS_PER_PACK + 2, LargeBucket_t::DUMMY())
+              OCI_ONLY(, verifier(L_))
     {
       // TRACE_FUNCTION(N);
       // PROFILE_F();
