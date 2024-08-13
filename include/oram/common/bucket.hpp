@@ -47,6 +47,21 @@ namespace _ORAM::Bucket
       return ret;
     }
 
+    friend std::ostream &operator<<(std::ostream &o, const DefaultBucketMetadata &x)
+    {
+      o << "common bucket: {" << std::endl;
+      for (int i = 0; i < BUCKET_SIZE; i++)
+      {
+        // if (x.priv.addresses[i] == ORAMAddress::DUMMY())
+        // {
+        //   continue;
+        // }
+        o << i << ": " << x.priv.addresses[i] << std::endl;
+      }
+      o << "}";
+      return o;
+    }
+
     using Encrypted_t = NonEncrypted<DefaultBucketMetadata>;
   };
 
@@ -74,6 +89,22 @@ namespace _ORAM::Bucket
     //
     BucketMetadata_t md;
     Block_t blocks[BUCKET_SIZE];
+
+    friend std::ostream &operator<<(std::ostream &o, const Bucket &x)
+    {
+      o << "{" << std::endl;
+      o << " md: " << x.md << std::endl;
+      for (int i = 0; i < BUCKET_SIZE; i++)
+      {
+        if (x.blocks[i] == Block::DUMMY())
+        {
+          continue;
+        }
+        o << i << ": " << x.blocks[i] << std::endl;
+      }
+      o << "}";
+      return o;
+    }
 
     static INLINE constexpr Bucket DUMMY()
     {

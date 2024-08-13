@@ -21,7 +21,38 @@ namespace _ORAM::PathORAM::Bucket
             return ret;
         }
 
-        bool operator==(BucketMetadata const &) const = default;
+        bool operator==(BucketMetadata const &other) const
+        {
+            for (int i = 0; i < BUCKET_SIZE; i++)
+            {
+                if (addresses[i] != other.addresses[i])
+                    return false;
+            }
+            return true;
+        }
+
+        bool IS_DUMMY() const
+        {
+            for (int i = 0; i < BUCKET_SIZE; i++)
+                if (addresses[i] != ORAMAddress::DUMMY())
+                    return false;
+            return true;
+        }
+
+        friend std::ostream &operator<<(std::ostream &o, const BucketMetadata &x)
+        {
+            o << "pathoram bucket: {" << std::endl;
+            for (int i = 0; i < BUCKET_SIZE; i++)
+            {
+                // if (x.addresses[i] == ORAMAddress::DUMMY())
+                // {
+                //     continue;
+                // }
+                o << i << ": " << x.addresses[i] << std::endl;
+            }
+            o << "}";
+            return o;
+        }
 
         using Encrypted_t = typename std::conditional_t<false, NonEncrypted<BucketMetadata>, NonEncrypted<BucketMetadata>>;
     };

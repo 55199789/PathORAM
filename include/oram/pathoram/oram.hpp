@@ -29,15 +29,26 @@
 // Z: number of blocks in bucket (4 in our case)
 namespace _ORAM::PathORAM::ORAMClient
 {
-    template <typename T = Block::DefaultBlockData, unsigned int Z = ORAM__Z, bool ENCRYPT_LARGE_BUCKETS = ORAM_SERVER__ENCRYPT_LARGE_BUCKETS, unsigned int LEVELS_PER_PACK = ORAM_SERVER__LEVELS_PER_PACK, unsigned int DIRECTLY_CACHED_LEVELS = ORAM_SERVER__DIRECTLY_CACHED_LEVELS, bool ObliviousCPUTrace = true>
+    template <typename T = Block::DefaultBlockData,
+              unsigned int Z = ORAM__Z,
+              bool ENCRYPT_LARGE_BUCKETS = ORAM_SERVER__ENCRYPT_LARGE_BUCKETS,
+              unsigned int LEVELS_PER_PACK = ORAM_SERVER__LEVELS_PER_PACK,
+              unsigned int DIRECTLY_CACHED_LEVELS = ORAM_SERVER__DIRECTLY_CACHED_LEVELS,
+              bool ObliviousCPUTrace = true>
     struct ORAMClient
     {
         using _T = T;
-        using Block_t = typename Block::Block<T, false>;
+        using Block_t = typename Block::Block<T,
+                                              false>;
         using StashedBlock_t = typename StashedBlock::StashedBlock<Block_t>;
-        using Bucket_t = typename _ORAM::PathORAM::Bucket::Bucket<Block_t, Z>;
+        using Bucket_t = typename _ORAM::PathORAM::Bucket::Bucket<Block_t,
+                                                                  Z>;
         using BucketMetadata_t = typename Bucket_t::BucketMetadata_t;
-        using ORAMClientInterface_t = typename ORAMClientInterface::ORAMClientInterface<Block_t, Bucket_t, ENCRYPT_LARGE_BUCKETS, LEVELS_PER_PACK, DIRECTLY_CACHED_LEVELS>;
+        using ORAMClientInterface_t = typename ORAMClientInterface::ORAMClientInterface<Block_t,
+                                                                                        Bucket_t,
+                                                                                        ENCRYPT_LARGE_BUCKETS,
+                                                                                        LEVELS_PER_PACK,
+                                                                                        DIRECTLY_CACHED_LEVELS>;
 
         ORAMClientInterface_t oramServerClient;
 
@@ -67,7 +78,7 @@ namespace _ORAM::PathORAM::ORAMClient
         //
         explicit ORAMClient(uint64_t N, bool _noInit = false) : oramServerClient(N), N_(N), L_(CeilLog2(N)), S_(Z * (CeilLog2(N) + 1) + ORAM__MS), state{false, DUMMY_POSITION}, noInit(_noInit)
         {
-            X_LOG("ORAMClientInterface: Done setting client up!");
+            // X_LOG("ORAMClientInterface: Done setting client up!");
         }
 
         void BeginAccess(const ORAMAddress &oaddress, const Position &newPos, Block_t &ret, const bool markCached = true)

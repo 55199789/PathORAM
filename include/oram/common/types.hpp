@@ -22,6 +22,20 @@ namespace _ORAM
       return (address == o.address) & (position == o.position);
     }
 
+    friend std::ostream &operator<<(std::ostream &o, const ORAMAddress &x)
+    {
+      if (x.address == DUMMY_ADDRESS)
+      {
+        Assert(x.position == DUMMY_POSITION);
+        o << "{ORAMAddress::DUMMY()}";
+      }
+      else
+      {
+        o << "(" << std::to_string(x.address) << ", " << std::to_string(x.position) << ")";
+      }
+      return o;
+    }
+
     static consteval INLINE ORAMAddress DUMMY() { return ORAMAddress{DUMMY_ADDRESS, DUMMY_POSITION}; }
   };
 }

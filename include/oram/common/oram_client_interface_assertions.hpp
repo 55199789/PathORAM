@@ -7,7 +7,7 @@
 #ifdef OCI_assertIONS
 #include <boost/functional/hash.hpp>
 #endif
-
+#include <iostream>
 namespace _ORAM::ORAMClientInterface
 {
 #ifdef OCI_assertIONS
@@ -41,11 +41,19 @@ namespace _ORAM::ORAMClientInterface
       if (checkdata_metadata.contains(location))
       {
         BucketMetadata_t &expected = checkdata_metadata[location];
-        assert(expected == ret); // , "\n", expected, "\n", ret, pos, realPos, depth, ret, ret);
+        Assert(expected == ret); // , "\n", expected, "\n", ret, pos, realPos, depth, ret, ret);
       }
       else
       {
-        assert(ret == BucketMetadata_t::DUMMY()); // , "\n", ret, pos, realPos, depth, ret, ret);
+        if (!ret.IS_DUMMY())
+        {
+          // ret, pos, realPos, depth, ret, ret
+          std::cout << "ret = " << ret << std::endl;
+          std::cout << "pos = " << pos << std::endl;
+          std::cout << "realPos = " << realPos << std::endl;
+          std::cout << "depth = " << depth << std::endl;
+          Assert(false);
+        } // , "\n", ret, pos, realPos, depth, ret, ret);
       }
     }
 
@@ -61,11 +69,11 @@ namespace _ORAM::ORAMClientInterface
       if (checkdata_block.contains(location))
       {
         auto &expected = checkdata_block[location];
-        assert(expected == ret); // , "\n", expected, "\n", ret);
+        Assert(expected == ret); // , "\n", expected, "\n", ret);
       }
       else
       {
-        assert(ret == Block_t::DUMMY()); // , "\n", ret);
+        Assert(ret == Block_t::DUMMY()); // , "\n", ret);
       }
     }
 
@@ -80,7 +88,7 @@ namespace _ORAM::ORAMClientInterface
 
     void UpdateBlock(const Index &pos, const Index &depth, const Index &offset, const Block_t &val)
     {
-      assert(offset < Bucket::BUCKET_SIZE);
+      Assert(offset < Bucket::BUCKET_SIZE);
       Position realPos = Indexers::GetArrIndex(L_, pos, depth);
 
       Triplet location = Triplet{realPos, depth, offset};

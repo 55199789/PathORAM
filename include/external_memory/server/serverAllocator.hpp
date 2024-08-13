@@ -33,11 +33,13 @@ struct LargeBlockAllocator {
   }
 
   const AllocatorSlot Allocate(Size_t _size) {
-    TRACE_FUNCTION(_size);
+    // TRACE_FUNCTION(_size);
 
     uint64_t bestIdx = -1;
     uint64_t bestSize = -1;
+    // std::cout << "freeList.size() = " << freeList.size() << ", _size = " << _size << std::endl;
     for (uint64_t i = 0; i < freeList.size(); i++) {
+      // std::cout << "\tfreeList[" << i << "].size = " << freeList[i].size << std::endl;
       if (freeList[i].size >= _size) {
         if (freeList[i].size < bestSize) {
           bestSize = freeList[i].size;
@@ -64,7 +66,7 @@ struct LargeBlockAllocator {
   }
 
   void Free(const AllocatorSlot& slot) {
-    TRACE_FUNCTION(slot.base, slot.size);
+    // TRACE_FUNCTION(slot.base, slot.size);
 
     if (slot.size == 0) return;
 

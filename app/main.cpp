@@ -2,18 +2,64 @@
 #include "oram/pathoram/oram.hpp"
 #include <cassert>
 #include <iostream>
+#include <random>
 #include <chrono>
-
-int main()
+class Timer
 {
+public:
+    Timer()
+        : start_clock(std::chrono::steady_clock::now()),
+          last_stop(std::chrono::steady_clock::now())
+    {
+    }
+
+    double get_total_time() const
+    {
+        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(now - this->start_clock).count() / 1000000.0;
+    }
+
+    double get_interval_time()
+    {
+        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
+        double interval_time = std::chrono::duration_cast<std::chrono::nanoseconds>(now - this->last_stop).count();
+        this->last_stop = now;
+        return interval_time / 1000000000.0;
+    }
+
+private:
+    std::chrono::steady_clock::time_point start_clock;
+    std::chrono::steady_clock::time_point last_stop;
+};
+
+int main(int argc, char **argv)
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    uint32_t n = argc >= 2 ? std::atoi(argv[1]) : 1 << 21; // 1 << 16;
+    uint32_t T = argc >= 3 ? std::atoi(argv[2]) : n;       // 1 << 16;
     using ORAMClient = _ORAM::PathORAM::ORAMClient::ORAMClient<_OBST::Node, ORAM__Z, false, 4>;
     using OramClient = _OBST::OramClient::OramClient<ORAMClient>;
-    _OBST::OBST::OBST<OramClient> x(4);
-    x.Insert(0, 32);
-    x.Insert(1, 10);
-    x.Insert(2, 10);
+    std::vector<uint64_t> data(n);
+    std::uniform_int_distribution<uint64_t> dis(0, std::numeric_limits<int64_t>::max());
+    for (uint32_t i = 0; i < n; i++)
+        data[i] = i;
+    std::shuffle(data.begin(), data.end(), gen);
+    Timer t;
+    _OBST::OBST::OBST<OramClient> x(n);
+    double create_time = t.get_interval_time();
+    std::cout << "Setup time: " << create_time << " s" << std::endl;
+    for (uint32_t i = 0; i < T; i++)
+        x.Insert(i, data[i]);
+    double insert_time = t.get_interval_time();
+    std::cout << "Insert time: " << insert_time << " s, avg " << insert_time * 1000000.0 / T << " us/op" << std::endl;
     _OBST::V a;
-    std::cout << x.Get(0, a) << std::endl;
-    std::cout << a << std::endl;
+    for (uint32_t i = 0; i < T; i++)
+    {
+        x.Get(i, a);
+        assert(a == data[i]);
+    }
+    double search_time = t.get_interval_time();
+    std::cout << "Search time: " << search_time << " s, avg " << search_time * 1000000.0 / T << " us/op" << std::endl;
     return 0;
 }
