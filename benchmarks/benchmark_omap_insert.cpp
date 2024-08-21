@@ -18,6 +18,7 @@ public:
     void SetUp(const ::benchmark::State &state) override
     {
         n = state.range(0);
+        std::cout << "insertion with n: " << n << std::endl;
         omap = new _OBST::OBST::OBST<OramClient>(n);
     }
 
@@ -34,7 +35,7 @@ BENCHMARK_DEFINE_F(OMapDataFixtureInsert, OMap)
     {
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> dist(0, std::numeric_limits<int>::max());
-        for (uint32_t i = 0; i < 1024; i++)
+        for (uint32_t i = 0; i < std::min((size_t)1024, n); i++)
             omap->Insert(dist(gen), dist(gen));
     }
 }

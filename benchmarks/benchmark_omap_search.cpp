@@ -22,7 +22,7 @@ public:
         omap = new _OBST::OBST::OBST<OramClient>(n);
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> dist(0, std::numeric_limits<int>::max());
-        for (uint32_t i = 0; i < 1024; i++)
+        for (uint32_t i = 0; i < std::min((size_t)1024, n); i++)
         {
             data[i] = dist(gen);
             omap->Insert(data[i], dist(gen));
@@ -41,7 +41,7 @@ BENCHMARK_DEFINE_F(OMapDataFixtureSearch, OMap)
     for (auto _ : state)
     {
         _OBST::V a;
-        for (uint32_t i = 0; i < 1024; i++)
+        for (uint32_t i = 0; i < std::min((size_t)1024, n); i++)
             omap->Get(data[i], a);
     }
 }
