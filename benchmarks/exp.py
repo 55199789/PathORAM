@@ -11,7 +11,7 @@ for n_base in range(8, 26):
     if os.path.exists(file_name):
         with open(file_name, 'r') as f:
             data = f.readlines()
-            if data[-1].find("Finished") != -1:
+            if data and data[-1].find("Finished") != -1:
                 continue
     # cmd = f"../bin/PathORAMBenchmark  --benchmark_out={file_name} \
     #                                 --benchmark_filter=OMapDataFixture.*/OMap/{n}/*"
@@ -24,4 +24,4 @@ for n_base in range(8, 26):
             raise Exception("Error")
     except Exception as e:
         print(e)
-        input("Press Enter to continue...")
+        # input("Press Enter to continue...")
