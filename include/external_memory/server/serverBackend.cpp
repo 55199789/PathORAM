@@ -7,7 +7,7 @@ struct MemServerInstaller {
   MemServerInstaller() {
     // EM::Backend::g_DefaultBackend = new EM::Backend::MemServerBackend(1<<28);
     constexpr uint64_t log2_st = 38;
-    EM::Backend::g_DefaultBackend = new EM::Backend::MemServerBackend((1ll << log2_st) + (1ll << (log2_st - 1)) + (1ll << (log2_st - 2));
+    EM::Backend::g_DefaultBackend = new EM::Backend::MemServerBackend((1ll << log2_st) + (1ll << (log2_st - 1)) + (1ll << (log2_st - 2)));
   }
 };
 MemServerInstaller g_MemServerInstaller;
