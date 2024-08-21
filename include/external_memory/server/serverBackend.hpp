@@ -58,6 +58,7 @@ struct MemServerBackend : ServerBackend {
   }
 
   MemServerBackend(uint64_t _size) : ServerBackend(_size) {
+    std::cout << "MemServerBackend _size: " << _size / (1ll << 30) << " GB" << std::endl;
     ocall_InitServer(&data, 4096, (size - 1) / 4096 + 1);
   }
 
