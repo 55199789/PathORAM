@@ -40,14 +40,22 @@ static long getMemoryUsage()
     return usage.ru_maxrss;
 }
 
-using ORAMClient = _ORAM::PathORAM::ORAMClient::ORAMClient<_OBST::Node, ORAM__Z, false, 4>;
-using OramClient = _OBST::OramClient::OramClient<ORAMClient>;
+// using ORAMClient = _ORAM::PathORAM::ORAMClient::ORAMClient<_OBST::Node, ORAM__Z, false, 4, 16>;
+using ORAMClient_t = typename _ORAM::PathORAM::ORAMClient::ORAMClient<_OBST::Node, ORAM__Z, false, 4>;
+using OramClient_t = _OBST::OramClient::OramClient<ORAMClient_t>;
+using OBST = typename _OBST::OBST::OBST<OramClient_t>;
+using ORAMServer_t = ORAMClient_t::ORAMClientInterface_t;
+using LargeBucket_t = ORAMServer_t::LargeBucket_t;
+using Block_t = ORAMClient_t::Block_t;
+using StashedBlock_t = ORAMClient_t::StashedBlock_t;
+using Bucket_t = ORAMClient_t::Bucket_t;
+using BucketMetadata = Bucket_t::BucketMetadata_t;
 
 int main(int argc, char **argv)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    size_t n = argc >= 2 ? std::atoi(argv[1]) : 1 << 21; // 1 << 16;
+    size_t n = argc >= 2 ? std::atoi(argv[1]) : 1 << 16; // 1 << 16;
     // uint32_t T = argc >= 3 ? std::atoi(argv[2]) : n;       // 1 << 16;
     size_t T = std::min(size_t(1024), n);
     std::vector<uint64_t> data(n);
@@ -58,7 +66,7 @@ int main(int argc, char **argv)
     std::cout << "Data size: " << sizeof(data[0]) * 2 * n / 1024.0 / 1024.0 << " MB" << std::endl;
     std::cout << "Memory usage before setup: " << getMemoryUsage() / 1024.0 << " MB" << std::endl;
     Timer t;
-    _OBST::OBST::OBST<OramClient> x(n);
+    OBST x(n);
     double create_time = t.get_interval_time();
     std::cout << "Setup time: " << create_time << " s" << std::endl;
     for (uint32_t i = 0; i < T; i++)
